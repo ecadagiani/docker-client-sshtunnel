@@ -1,0 +1,26 @@
+version: "3"
+services:
+  helloworld:
+    image: kornkitti/express-hello-world
+    networks:
+      internal:
+        aliases:
+        - helloworld
+  tunnel:
+    build: ../
+    tty: true
+    stdin_open: true
+    restart: always
+    env_file:
+    - tunnel.env
+    depends_on:
+    - helloworld
+    environment:
+    - KEY_NAME=keyTunnelHMB
+    volumes:
+    - ~/.ssh/keyTunnelHMB:/root/.ssh/keyTunnelHMB
+    networks:
+      internal:
+
+networks:
+  internal:
