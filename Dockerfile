@@ -13,7 +13,7 @@ ENV KEY_NAME keyTunnelHMB
 VOLUME /root/.ssh
 
 CMD ssh \
-    -i ~/.ssh/$KEY_NAME \
+    -i /root/.ssh/$KEY_NAME \
     -o "StrictHostKeyChecking no" \
     -p $REMOTE_URL_PORT \
     -R $REMOTE_SUBDOMAIN:$REMOTE_SUBDOMAIN_PORT:$LOCAL_HOST:$LOCAL_PORT \
