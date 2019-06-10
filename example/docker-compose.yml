@@ -16,9 +16,9 @@ services:
     depends_on:
     - helloworld
     environment:
-    - KEY_NAME=keyTunnelHMB
+    - KEY_NAME=key_rsa
     volumes:
-    - ~/.ssh/keyTunnelHMB:/root/.ssh/keyTunnelHMB
+    - ~/.ssh/key_rsa:/root/.ssh/key_rsa
     networks:
       internal:
 
