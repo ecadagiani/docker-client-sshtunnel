@@ -1,7 +1,5 @@
 FROM alpine:latest
 
-RUN apk add --no-cache openssh
-
 ENV REMOTE_URL tunnel.hellomybot.io
 ENV REMOTE_URL_PORT 2222
 ENV REMOTE_SUBDOMAIN foo
