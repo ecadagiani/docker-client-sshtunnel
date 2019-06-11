@@ -16,7 +16,7 @@ ENV KEY_NAME key_rsa
 VOLUME /root/.ssh
 
 CMD ssh \
-    -i ~/.ssh/$KEY_NAME \
+    -i /root/.ssh/$KEY_NAME \
     -o "StrictHostKeyChecking no" \
     -p $CONNECTION_PORT \
     -R $REMOTE_SUBDOMAIN:$REMOTE_PORT:$LOCAL_HOST:$LOCAL_PORT \
